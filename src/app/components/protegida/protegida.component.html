@@ -1,1 +1,13 @@
-<p>protegida works!</p>
+<div class="row" *ngIf="auth.userProfile$ | async as profile">
+  <div class="col-md-3 col-12">
+    <div class="card">
+      <img class="card-img-top" [src]="profile.picture" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ profile.name }}</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9 col-12">
+    <pre>{{ profile | json }}</pre>
+  </div>
+</div>
